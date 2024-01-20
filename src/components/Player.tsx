@@ -5,12 +5,14 @@ export default function Player({ initalName, symbol }) {
   // now we want to update this component when save player info, thus we use useSate()
   const [isEditing, setIsEditing] = useState(false);
   const [playerName, setPlayerName] = useState(initalName);
+
   function handleEditClick() {
     // setIsEditing(!isEditing) // React is scheduling these sate update, not happen immediately
     setIsEditing((edting) => !edting); //but we can use (edting)=>!edting, this can get the latest state of isEditing
   }
+
   function handleChange(event) {
-    // console.log(event)
+    console.log(event);
     setPlayerName(event.target.value);
   }
 

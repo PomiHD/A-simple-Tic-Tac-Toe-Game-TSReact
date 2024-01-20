@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Player from "./components/Player";
+import GameBoard from "./components/GameBoard";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
           <Player initalName={"Player 1"} symbol={"X"} />
           <Player initalName={"Player 2"} symbol={"O"} />
         </ol>
-        game board
+        <GameBoard />
       </div>
       logic
     </main>
