@@ -6,7 +6,9 @@ export default function Player({ name, symbol }) {
     const [isEditing, setIsEditing] = useState(false);
 
     function handleEditClick() {
-        setIsEditing(!isEditing)
+        // setIsEditing(!isEditing) // React is scheduling these sate update, not happen immediately
+        setIsEditing((edting)=>!edting) //but we can use (edting)=>!edting, this can get the latest state of isEditing
+       
     }
 
     let playerName = <span className={"player-name"}>{name}</span>;
