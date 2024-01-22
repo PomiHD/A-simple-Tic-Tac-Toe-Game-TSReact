@@ -8,7 +8,7 @@ export default function Player({ initialName, symbol, isActive }) {
 
   function handleEditClick() {
     // setIsEditing(!isEditing) // React is scheduling these sate update, not happen immediately
-    setIsEditing((edting) => !edting); //but we can use (edting)=>!edting, this can get the latest state of isEditing
+    setIsEditing((editing) => !editing); //but we can use (edting)=>!edting, this can get the latest state of isEditing
   }
 
   function handleChange(event: { target: { value: any } }) {
