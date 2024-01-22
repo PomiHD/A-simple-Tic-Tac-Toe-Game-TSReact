@@ -1,4 +1,3 @@
-
 export default function GameBoard({ onSelectSquare, board }) {
   // const [gameBoard, setGameBoard] = useState(initialGameBoard);
   //
@@ -10,8 +9,6 @@ export default function GameBoard({ onSelectSquare, board }) {
   //   });
   //   onSelectSquare();
   // }
-
- 
 
   return (
     <ol id={"game-board"}>
