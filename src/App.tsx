@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Player from "./components/Player";
 import GameBoard from "./components/GameBoard";
-import { useState } from "react";
 import Log from "./components/Log";
-import { WINNING_COMBINATIONS } from "./winning-combinations";
 import GameOver from "./components/GameOver";
 import {
   deriveActivePlayer,
@@ -40,7 +38,8 @@ function App() {
   function handleRestart() {
     setGameTurns([]);
   }
-  function handlePlayerNameChange(symbol, newName) {
+
+  function handlePlayerNameChange(symbol: any, newName: any) {
     setPlayers((prevPlayers) => {
       return {
         ...prevPlayers,
