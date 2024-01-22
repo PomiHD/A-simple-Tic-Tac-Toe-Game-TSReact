@@ -1,17 +1,17 @@
 ﻿import React from "react";
 import { useState } from "react";
 
-export default function Player({ initalName, symbol }) {
+export default function Player({ initialName, symbol, isActive }) {
   // now we want to update this component when save player info, thus we use useSate()
   const [isEditing, setIsEditing] = useState(false);
-  const [playerName, setPlayerName] = useState(initalName);
+  const [playerName, setPlayerName] = useState(initialName);
 
   function handleEditClick() {
     // setIsEditing(!isEditing) // React is scheduling these sate update, not happen immediately
     setIsEditing((edting) => !edting); //but we can use (edting)=>!edting, this can get the latest state of isEditing
   }
 
-  function handleChange(event) {
+  function handleChange(event: { target: { value: any } }) {
     console.log(event);
     setPlayerName(event.target.value);
   }
@@ -23,7 +23,7 @@ export default function Player({ initalName, symbol }) {
     );
   }
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
       <span className={"player"}>
         {editablePlayerName}
         <span className={"player-symbol"}> {symbol}</span>

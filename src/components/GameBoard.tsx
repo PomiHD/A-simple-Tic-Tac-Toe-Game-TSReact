@@ -5,23 +5,16 @@ const initialGameBoard = [
   [null, null, null],
   [null, null, null],
 ];
-export default function GameBoard() {
+export default function GameBoard({ onSelectSquare, activePlayerSymbol }) {
   const [gameBoard, setGameBoard] = useState(initialGameBoard);
-  // console.log(typeof gameBoard);
-  // console.log(gameBoard);
 
   function handleSelectSquare(rowIndex, colIndex) {
     setGameBoard((prevGameBoard) => {
       const updatedBoard = [...prevGameBoard].map((innerArr) => [...innerArr]);
-      // console.log("prevGameBoard: " + prevGameBoard);
-      // console.log(typeof [...prevGameBoard]);
-      // console.log("[...prevGameBoard]: " + [...prevGameBoard]);
-      // console.log("Before updatedBoard: " + updatedBoard);
-      updatedBoard[rowIndex][colIndex] = "X";
-      // console.log("After updatedBoard: " + updatedBoard);
-      // console.log("{\n}");
+      updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
       return updatedBoard;
     });
+    onSelectSquare();
   }
 
   return (
